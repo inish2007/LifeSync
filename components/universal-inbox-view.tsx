@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import { useState } from 'react';
 import {
@@ -206,7 +207,7 @@ export default function UniversalInboxView({
                         </span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                           <IndianRupee size={13} />
-                          {item.proposal.amount || 'N/A'}
+                          {inrOnly(item.proposal.amount || 'N/A')}
                         </span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                           <Calendar size={13} />

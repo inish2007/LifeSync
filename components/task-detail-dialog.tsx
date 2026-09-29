@@ -272,7 +272,7 @@ export default function TaskDetailDialog({
             </span>
           </div>
           <p style={{ margin: 0, fontSize: 13.5, color: '#292820', lineHeight: 1.55 }}>
-            {whyNow}
+            {inrOnly(whyNow)}
           </p>
         </div>
 

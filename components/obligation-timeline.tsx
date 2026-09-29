@@ -149,55 +149,6 @@ export default function ObligationTimeline({
         </div>
       </div>
 
-      {/* Feeling Overwhelmed? Focus Mode Callout */}
-      {onEnterFocusMode && (
-        <div
-          style={{
-            background: 'linear-gradient(135deg, #f5f1e8 0%, #eee9df 100%)',
-            border: '1.5px solid #e3ddcf',
-            borderRadius: 12,
-            padding: '12px 18px',
-            marginBottom: 16,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: 12,
-            flexWrap: 'wrap',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div
-              style={{
-                width: 32,
-                height: 32,
-                borderRadius: '50%',
-                background: '#eee9df',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#5c6048',
-              }}
-            >
-              <Sparkles size={16} />
-            </div>
-            <div>
-              <strong style={{ color: '#5c6048', fontSize: 13.5 }}>Feeling overwhelmed by too many tasks?</strong>
-              <div style={{ fontSize: 12.5, color: '#686759' }}>
-                Activate Focus Mode to hide the full timeline and see only the 3 most useful actions for today.
-              </div>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="primary"
-            style={{ padding: '6px 14px', fontSize: 12.5, fontWeight: 700 }}
-            onClick={onEnterFocusMode}
-          >
-            🎯 Enter Focus Mode
-          </button>
-        </div>
-      )}
-
       {/* Filter and Sort Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, borderBottom: '1px solid #eee9df', paddingBottom: 10, marginBottom: 18 }}>
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
@@ -614,7 +565,7 @@ export default function ObligationTimeline({
                       <Sparkles size={14} style={{ marginTop: 2, flexShrink: 0, color: '#555d3d' }} />
                       <div style={{ lineHeight: 1.4 }}>
                         <strong style={{ color: '#555d3d', marginRight: 4 }}>Why now?</strong>
-                        {whyNow}
+                        {inrOnly(whyNow)}
                       </div>
                     </div>
                   )}

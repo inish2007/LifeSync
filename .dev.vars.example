@@ -1,0 +1,14 @@
+# Copy to .dev.vars for local development. Do not commit .dev.vars.
+# The default preview never sends to WhatsApp and needs no credentials.
+WHATSAPP_MODE=preview
+
+# Optional Meta developer test-number setup only (never a production sender).
+# WHATSAPP_MODE=test
+# WHATSAPP_ACCESS_TOKEN=
+# WHATSAPP_TEST_PHONE_NUMBER_ID=
+# WHATSAPP_BUSINESS_NUMBER=
+# WHATSAPP_API_VERSION=
+# WHATSAPP_TEST_RECIPIENTS=919876543210
+# WHATSAPP_APP_SECRET=
+# WHATSAPP_VERIFY_TOKEN=
+# CRON_SECRET=

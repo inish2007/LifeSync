@@ -521,7 +521,7 @@ export default function FocusModeView({
                       <strong style={{ color: isFirst ? '#5c6048' : '#555d3d', marginRight: 4 }}>
                         Why this matters now:
                       </strong>
-                      {rec.whyThisMattersNow}
+                      {inrOnly(rec.whyThisMattersNow)}
                     </div>
                   </div>
 
