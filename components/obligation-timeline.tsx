@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import { useState } from 'react';
 import {
@@ -7,7 +8,7 @@ import {
   CheckCircle2,
   AlertTriangle,
   FileText,
-  DollarSign,
+  IndianRupee,
   Building2,
   Trash2,
   CheckCheck,
@@ -453,8 +454,8 @@ export default function ObligationTimeline({
                         </span>
                         <span>•</span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontWeight: 600, color: '#292820' }}>
-                          <DollarSign size={13} />
-                          {item.amount}
+                          <IndianRupee size={13} />
+                          {inrOnly(item.amount)}
                         </span>
                       </div>
                     </div>
@@ -530,7 +531,7 @@ export default function ObligationTimeline({
 
                   {/* Required Action */}
                   <p style={{ margin: '6px 0', fontSize: 14, color: '#3c3d30' }}>
-                    <strong>Action:</strong> {item.requiredAction}
+                    <strong>Action:</strong> {inrOnly(item.requiredAction)}
                   </p>
 
                   {/* Waiting note if waiting */}
@@ -547,6 +548,7 @@ export default function ObligationTimeline({
                     </div>
                   )}
 
+                  <details className="quiet-details"><summary>Why this matters & source</summary>
                   {/* Documented Consequence Section */}
                   {!isCompleted && (
                     <div
@@ -657,11 +659,12 @@ export default function ObligationTimeline({
                         <div style={{ fontSize: 11, fontWeight: 700, color: '#5c6048', marginBottom: 3, textTransform: 'uppercase', letterSpacing: 0.5 }}>
                           Extracted Source Excerpt ({item.sourceDocument?.name || 'Document'}):
                         </div>
-                        {item.sourceExcerpt}
+                        {inrOnly(item.sourceExcerpt)}
                       </div>
                     )}
                   </div>
 
+                  </details>
                 </div>
               </div>
             );

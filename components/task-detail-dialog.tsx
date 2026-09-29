@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import { useState, useEffect } from 'react';
 import {
@@ -7,7 +8,7 @@ import {
   PlayCircle,
   CheckCircle2,
   Calendar,
-  DollarSign,
+  IndianRupee,
   Building2,
   AlertTriangle,
   Plus,
@@ -224,7 +225,7 @@ export default function TaskDetailDialog({
               {task.title}
             </DialogTitle>
             <DialogDescription style={{ color: '#5c6048' }}>
-              {task.payee} • Due {task.dueDate} • {task.amount}
+              {task.payee} • Due {task.dueDate} • {inrOnly(task.amount)}
             </DialogDescription>
           </div>
 
@@ -325,7 +326,7 @@ export default function TaskDetailDialog({
               Required Action
             </span>
             <div style={{ fontSize: 14, color: '#292820', fontWeight: 550, marginTop: 4 }}>
-              {task.requiredAction}
+              {inrOnly(task.requiredAction)}
             </div>
           </div>
 
@@ -902,7 +903,7 @@ export default function TaskDetailDialog({
               Source Excerpt:
             </div>
             <div className="quote" style={{ fontSize: 12.5, padding: '8px 12px' }}>
-              {task.sourceExcerpt}
+              {inrOnly(task.sourceExcerpt)}
             </div>
           </div>
         )}

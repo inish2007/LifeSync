@@ -2,8 +2,12 @@ import { Obligation, UniversalInboxItem, ObligationFieldProposal, ObligationStat
 import { isCalendarDate, validateCompletion } from './workflows';
 import { SAMPLE_DOCUMENTS } from './extractor';
 
-const OBLIGATIONS_KEY = 'lifeloop_obligations_v1';
-const INBOX_KEY = 'lifeloop_inbox_v1';
+let OBLIGATIONS_KEY = 'lifeloop_obligations_v1';
+let INBOX_KEY = 'lifeloop_inbox_v1';
+export function setStorageAccount(id: string | null) {
+  OBLIGATIONS_KEY = 'lifeloop_obligations_v1' + (id ? `_${id}` : '');
+  INBOX_KEY = 'lifeloop_inbox_v1' + (id ? `_${id}` : '');
+}
 const EVENT_NAME = 'lifeloop_storage_changed';
 
 export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
@@ -12,7 +16,7 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Submit Vehicle Odometer & Photo',
     category: 'Insurance & Vehicle',
     payee: 'Progressive Casualty Insurance Company',
-    amount: '$0.00 (Verification)',
+    amount: '₹0.00 (Verification)',
     dueDate: '2026-10-14',
     requiredAction: 'Upload clear dashboard odometer photograph to policyholder mobile portal',
     consequence: 'Prerequisite for safety inspection signoff; delay forfeits low-mileage tier discount.',
@@ -32,7 +36,7 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Complete Vehicle Safety & Emissions Inspection',
     category: 'Insurance & Vehicle',
     payee: 'Certified State Inspection Station',
-    amount: '$45.00',
+    amount: '₹45.00',
     dueDate: '2026-10-16',
     requiredAction: 'Bring vehicle and mileage certificate to certified bay for annual certificate',
     consequence: 'Insurance renewal binder cannot be finalized without valid inspection certificate.',
@@ -52,13 +56,13 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Progressive Auto Policy Renewal',
     category: 'Insurance & Vehicle',
     payee: 'Progressive Casualty Insurance Company',
-    amount: '$482.60',
+    amount: '₹482.60',
     dueDate: '2026-10-18',
     requiredAction: 'Authorize semi-annual premium payment online before 11:59 PM EST',
-    consequence: '$25 late fee assessed if unpaid by due date; continuous coverage lapses after 10-day grace period with DMV registration suspension risk.',
+    consequence: '₹25 late fee assessed if unpaid by due date; continuous coverage lapses after 10-day grace period with DMV registration suspension risk.',
     consequenceProvenance: 'From document',
     consequenceType: 'service_interruption',
-    sourceExcerpt: 'If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a $25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026.',
+    sourceExcerpt: 'If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a ₹25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026.',
     status: 'confirmed',
     createdAt: '2026-09-25T10:30:00.000Z',
     confirmedAt: '2026-09-25T10:32:00.000Z',
@@ -80,7 +84,7 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Apartment Parking Stall Appendix',
     category: 'Housing & Utilities',
     payee: 'Highland Park Residential Apartments',
-    amount: '$75.00 / mo',
+    amount: '₹75.00 / mo',
     dueDate: '2026-10-01',
     requiredAction: 'Sign garage space agreement and confirm stall #28 assignment',
     consequence: 'Required prior to signing 12-month residential lease extension.',
@@ -102,13 +106,13 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Apartment Lease Renewal Addendum',
     category: 'Housing & Utilities',
     payee: 'Highland Park Residential Apartments',
-    amount: '$2,150.00 / mo',
+    amount: '₹2,150.00 / mo',
     dueDate: '2026-10-25',
     requiredAction: 'Sign and submit signed lease addendum via resident portal (60 days prior)',
-    consequence: 'Tenancy automatically converts to month-to-month penalty rate of $2,450.00/month plus a $125.00 monthly holdover administrative fee if not returned by Oct 25.',
+    consequence: 'Tenancy automatically converts to month-to-month penalty rate of ₹2,450.00/month plus a ₹125.00 monthly holdover administrative fee if not returned by Oct 25.',
     consequenceProvenance: 'From document',
     consequenceType: 'missed_eligibility',
-    sourceExcerpt: 'Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of $2,450.00/month plus a $125.00 monthly holdover administrative fee.',
+    sourceExcerpt: 'Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of ₹2,450.00/month plus a ₹125.00 monthly holdover administrative fee.',
     status: 'confirmed',
     createdAt: '2026-09-26T14:15:00.000Z',
     confirmedAt: '2026-09-26T14:18:00.000Z',
@@ -158,7 +162,7 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Annual Preventative Dental Hygiene Appointment',
     category: 'Health & Medical',
     payee: 'Bayside Family Dental Care',
-    amount: '$0.00 (Preventative)',
+    amount: '₹0.00 (Preventative)',
     dueDate: '2026-10-30',
     requiredAction: 'Call dental office to schedule annual preventative teeth cleaning and exam',
     consequence: 'No documented consequence cited in appointment reminder.',
@@ -178,7 +182,7 @@ export const INITIAL_SEED_OBLIGATIONS: Obligation[] = [
     title: 'Urgent Expedited Passport Renewal & Signature',
     category: 'Legal & Government',
     payee: 'U.S. Department of State Passport Agency',
-    amount: '$190.00',
+    amount: '₹190.00',
     dueDate: '2026-10-02',
     requiredAction: 'Obtain notarized biometric photos, sign DS-82, and submit via certified courier',
     consequence: 'Expedited processing window expires; departure flight ticket invalidated with non-refundable rebooking surcharges.',
@@ -246,7 +250,16 @@ export function getObligations(): Obligation[] {
       localStorage.setItem(OBLIGATIONS_KEY, JSON.stringify(INITIAL_SEED_OBLIGATIONS));
       return INITIAL_SEED_OBLIGATIONS;
     }
-    return JSON.parse(raw);
+    return (JSON.parse(raw) as Obligation[]).map(item => {
+      const seed = INITIAL_SEED_OBLIGATIONS.find(s => s.id === item.id);
+      if (!seed) return item;
+      const updated = { ...item };
+      // Only relabel untouched legacy demo text. Never convert a user's real money silently.
+      for (const field of ['amount','consequence','sourceExcerpt','requiredAction'] as const) {
+        if (item[field]?.replace(/\$(?=\d)/g, '₹') === seed[field]) updated[field] = seed[field];
+      }
+      return updated;
+    });
   } catch (err) {
     console.error('Failed reading obligations from localStorage:', err);
     return INITIAL_SEED_OBLIGATIONS;

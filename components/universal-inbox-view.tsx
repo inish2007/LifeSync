@@ -9,7 +9,7 @@ import {
   ArrowRight,
   Trash2,
   Calendar,
-  DollarSign,
+  IndianRupee,
   Building2,
   AlertTriangle,
   Eye,
@@ -205,7 +205,7 @@ export default function UniversalInboxView({
                           {item.proposal.payee || 'Direct notice'}
                         </span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                          <DollarSign size={13} />
+                          <IndianRupee size={13} />
                           {item.proposal.amount || 'N/A'}
                         </span>
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>

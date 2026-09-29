@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import { useState } from 'react';
 import {
@@ -431,7 +432,7 @@ export default function DeadlineBackplannerView({
                       </span>
                       <span>•</span>
                       <span>
-                        Action: <strong>{task.requiredAction}</strong>
+                        Action: <strong>{inrOnly(task.requiredAction)}</strong>
                       </span>
                     </div>
                   </div>

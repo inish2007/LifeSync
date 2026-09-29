@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-const LifeLoop = dynamic(() => import('./lifeloop'), { ssr: false });
+const LifeLoop = dynamic(() => import('../components/account-gate'), { ssr: false });
 
 export default function Home() {
   return <LifeLoop />;

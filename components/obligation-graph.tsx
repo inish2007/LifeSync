@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import { useState } from 'react';
 import {
@@ -11,7 +12,7 @@ import {
   AlertTriangle,
   Info,
   Calendar,
-  DollarSign,
+  IndianRupee,
   Building2,
   ChevronRight,
   Plus,
@@ -172,8 +173,8 @@ export default function ObligationGraph({
                 </span>
                 <span>•</span>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                  <DollarSign size={13} />
-                  {nextBestAction.task.amount}
+                  <IndianRupee size={13} />
+                  {inrOnly(nextBestAction.task.amount)}
                 </span>
                 {nextBestAction.unlockCount > 0 && (
                   <span

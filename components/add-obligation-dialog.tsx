@@ -9,7 +9,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   Calendar,
-  DollarSign,
+  IndianRupee,
   Building2,
   Tag,
   FileCode,
@@ -186,10 +186,10 @@ export default function AddObligationDialog({
           `ANNUAL UTILITY & SERVICE STATEMENT\n` +
           `Account: US-928104\n` +
           `Payee: Metropolitan Services Corp\n` +
-          `Amount Due: $142.50\n` +
+          `Amount Due: ₹142.50\n` +
           `Due Date: 2026-10-24\n` +
           `Required Action: Submit online payment through customer portal or mobile banking.\n` +
-          `Consequence: Late payment fee of $15.00 will be added if not settled within 10 days of due date.`;
+          `Consequence: Late payment fee of ₹15.00 will be added if not settled within 10 days of due date.`;
         setRawText(simulatedText);
       };
       reader.readAsDataURL(file);
@@ -206,7 +206,7 @@ export default function AddObligationDialog({
           setRawText(`[Extracted from document: ${file.name}]\n` +
             `NOTICE OF PAYMENT AND DEADLINE\n` +
             `Organization: Commonwealth Regional Authority\n` +
-            `Invoice Total: $290.00\n` +
+            `Invoice Total: ₹290.00\n` +
             `Due Date: 2026-10-28\n` +
             `Required Action: Return verified remittance coupon with authorization signature.\n` +
             `Consequence Statement: Accounts delinquent past due date will incur 1.5% statutory monthly interest and administrative suspension.`);
@@ -769,7 +769,7 @@ export default function AddObligationDialog({
                 <div className="field" style={{ margin: 0 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <DollarSign size={14} color="#5c6048" />
+                      <IndianRupee size={14} color="#5c6048" />
                       Amount / Balance
                     </label>
                     {editedFields.amount ? (
@@ -782,7 +782,7 @@ export default function AddObligationDialog({
                     type="text"
                     value={formFields.amount}
                     onChange={(e) => handleFieldChange('amount', e.target.value)}
-                    placeholder="e.g. $482.60 or $0.00"
+                    placeholder="e.g. ₹482.60 or ₹0.00"
                   />
                 </div>
 

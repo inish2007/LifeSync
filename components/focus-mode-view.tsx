@@ -1,4 +1,5 @@
 'use client';
+import { inrOnly } from '@/lib/currency';
 
 import {
   Sparkles,
@@ -9,7 +10,7 @@ import {
   Lock,
   PlayCircle,
   Building2,
-  DollarSign,
+  IndianRupee,
   Calendar,
   CalendarClock,
   ShieldAlert,
@@ -105,11 +106,10 @@ export default function FocusModeView({
             </div>
 
             <h2 style={{ fontSize: 26, fontWeight: 800, margin: '6px 0 10px', letterSpacing: '-0.5px' }}>
-              Feeling overwhelmed? Breathe. Here are your 3 actions for today.
+              Your next three steps.
             </h2>
             <p style={{ margin: 0, fontSize: 14.5, color: 'rgba(255, 255, 255, 0.88)', lineHeight: 1.55 }}>
-              LifeLoop filtered out all background clutter. These 3 tasks are prioritized using deadline proximity,
-              documented consequence severity, dependency unlock power, and quick-win effort.
+              Prioritized by urgency, impact, and effort.
             </p>
 
             <div style={{ display: 'flex', gap: 16, marginTop: 16, flexWrap: 'wrap', fontSize: 13 }}>
@@ -152,7 +152,7 @@ export default function FocusModeView({
         </div>
       </div>
 
-      <EnergyStepsView obligations={obligations} onSelectTask={onSelectTask} />
+      <details className="quiet-details"><summary>Low energy? Find a smaller step</summary><EnergyStepsView obligations={obligations} onSelectTask={onSelectTask} /></details>
 
       {/* CRITICAL OVERDUE TASKS BANNER (RULE: NEVER HIDE CRITICAL OVERDUE TASKS!) */}
       {criticalOverdueTasks.length > 0 && (
@@ -242,7 +242,7 @@ export default function FocusModeView({
                     </h4>
 
                     <p style={{ margin: '3px 0 6px', fontSize: 13, color: '#3c3d30' }}>
-                      <strong>Action:</strong> {task.requiredAction}
+                      <strong>Action:</strong> {inrOnly(task.requiredAction)}
                     </p>
 
                     {task.consequence && (
@@ -260,7 +260,7 @@ export default function FocusModeView({
                         }}
                       >
                         <AlertTriangle size={11} />
-                        <span><strong>Documented Consequence [{prov}]:</strong> {task.consequence}</span>
+                        <span><strong>Documented Consequence [{prov}]:</strong> {inrOnly(task.consequence)}</span>
                       </div>
                     )}
                   </div>
@@ -268,7 +268,7 @@ export default function FocusModeView({
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
                     <div style={{ textAlign: 'right', fontSize: 12, color: '#5c6048' }}>
                       <div>⏱️ {rec.estimatedTimeDisplay}</div>
-                      <div style={{ fontWeight: 700, color: '#292820' }}>{task.amount}</div>
+                      <div style={{ fontWeight: 700, color: '#292820' }}>{inrOnly(task.amount)}</div>
                     </div>
 
                     <button
@@ -476,7 +476,7 @@ export default function FocusModeView({
                     </span>
                     <span>•</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontWeight: 700, color: '#292820' }}>
-                      <DollarSign size={13} /> {task.amount}
+                      <IndianRupee size={13} /> {inrOnly(task.amount)}
                     </span>
                     <span>•</span>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
@@ -497,7 +497,7 @@ export default function FocusModeView({
                       lineHeight: 1.45,
                     }}
                   >
-                    <strong style={{ color: '#292820' }}>What to do:</strong> {task.requiredAction}
+                    <strong style={{ color: '#292820' }}>What to do:</strong> {inrOnly(task.requiredAction)}
                   </div>
 
                   {/* WHY THIS MATTERS NOW CALLOUT (REQUIRED) */}
@@ -546,7 +546,7 @@ export default function FocusModeView({
                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                         <ShieldAlert size={14} color="#85523f" />
                         <span>
-                          <strong>Documented Consequence:</strong> {task.consequence}
+                          <strong>Documented Consequence:</strong> {inrOnly(task.consequence)}
                         </span>
                       </div>
                       <span

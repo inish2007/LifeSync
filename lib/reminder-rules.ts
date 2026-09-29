@@ -11,7 +11,7 @@ export function normalizeIndianPhone(value: string): string | null {
 export function planReminders(tasks: ReminderTask[], today = indiaToday()): Reminder[] {
   const tomorrow = new Date(`${today}T12:00:00Z`); tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
   const nextDay = tomorrow.toISOString().slice(0, 10);
-  return tasks.filter(t => t.status === 'confirmed' || t.status === 'waiting').flatMap(task => {
+  return tasks.filter(t => t.status === 'confirmed' || t.status === 'waiting').flatMap<Reminder>(task => {
     if (task.status === 'waiting' && task.followUpDate && task.followUpDate <= today) return [{ key: `${task.id}:follow-up:${today}`, taskId: task.id, kind: 'follow-up' as const, text: `Time to follow up: ${task.title}. Open LifeLoop to check the response.` }];
     const kind = task.dueDate < today ? 'overdue' : task.dueDate === today ? 'due' : task.dueDate === nextDay ? 'upcoming' : null;
     return kind ? [{ key: `${task.id}:${kind}:${today}`, taskId: task.id, kind, text: `${kind === 'overdue' ? 'Overdue' : kind === 'due' ? 'Due today' : 'Due tomorrow'}: ${task.title} (${task.dueDate}). Open LifeLoop for your next step.` }] : [];

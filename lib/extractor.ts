@@ -29,26 +29,26 @@ NOTICE OF POLICY RENEWAL & PREMIUM STATEMENT
 Billing Statement Date: September 22, 2026
 Renewal Policy Effective: October 20, 2026 to April 20, 2027
 
-Total Six-Month Premium: $482.60
-Minimum Amount Due by Due Date: $482.60
+Total Six-Month Premium: ₹482.60
+Minimum Amount Due by Due Date: ₹482.60
 Payment Due Date: October 18, 2026
 
 REQUIRED ACTION:
-Please authorize automatic payment online via progressive.com/pay or submit physical check with remittance coupon before 11:59 PM EST on October 18, 2026. If choosing monthly installments, a $3 processing installment surcharge applies.
+Please authorize automatic payment online via progressive.com/pay or submit physical check with remittance coupon before 11:59 PM EST on October 18, 2026. If choosing monthly installments, a ₹3 processing installment surcharge applies.
 
 IMPORTANT NOTICE OF CONSEQUENCE:
-If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a $25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026, and notice of cancellation will be dispatched to the state Department of Motor Vehicles, which may result in vehicle registration suspension.`,
+If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a ₹25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026, and notice of cancellation will be dispatched to the state Department of Motor Vehicles, which may result in vehicle registration suspension.`,
     expectedProposal: {
       title: 'Progressive Auto Policy Renewal',
       category: 'Insurance & Vehicle',
       payee: 'Progressive Casualty Insurance Company',
-      amount: '$482.60',
+      amount: '₹482.60',
       dueDate: '2026-10-18',
       requiredAction: 'Authorize payment online via progressive.com/pay before 11:59 PM EST',
-      consequence: '$25 late fee assessed if unpaid by due date; continuous coverage lapses after 10-day grace period with DMV registration suspension risk.',
+      consequence: '₹25 late fee assessed if unpaid by due date; continuous coverage lapses after 10-day grace period with DMV registration suspension risk.',
       consequenceProvenance: 'From document',
       consequenceType: 'service_interruption',
-      sourceExcerpt: 'If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a $25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026.',
+      sourceExcerpt: 'If full payment or installment is not received by 11:59 PM EST on October 18, 2026, a ₹25 late payment fee will be assessed immediately. Continuous coverage will lapse after a statutory 10-day grace period ending October 28, 2026.',
     },
   },
   {
@@ -67,24 +67,24 @@ OFFICIAL NOTICE: LEASE TERM EXTENSION OFFER
 Date: September 25, 2026
 
 Dear Resident,
-We value you as a member of our community. Your current 12-month lease will expire on November 30, 2026. We are pleased to offer a renewal term at the adjusted market rate of $2,150.00 per month (effective December 1, 2026).
+We value you as a member of our community. Your current 12-month lease will expire on November 30, 2026. We are pleased to offer a renewal term at the adjusted market rate of ₹2,150.00 per month (effective December 1, 2026).
 
 REQUIRED ACTION:
 To secure this guaranteed 12-month rate, sign and return the attached Lease Addendum through the resident portal or in person at the leasing office by October 25, 2026 (60 days prior to lease end).
 
 CONSEQUENCE OF INACTION:
-Per Section 14 of your original lease agreement, written notice of intent to vacate or renewal confirmation is required at least 60 days before expiration. Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of $2,450.00/month plus a $125.00 monthly holdover administrative fee.`,
+Per Section 14 of your original lease agreement, written notice of intent to vacate or renewal confirmation is required at least 60 days before expiration. Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of ₹2,450.00/month plus a ₹125.00 monthly holdover administrative fee.`,
     expectedProposal: {
       title: 'Apartment Lease Renewal Addendum',
       category: 'Housing & Utilities',
       payee: 'Highland Park Residential Apartments',
-      amount: '$2,150.00 / month',
+      amount: '₹2,150.00 / month',
       dueDate: '2026-10-25',
       requiredAction: 'Sign and return the renewal Lease Addendum via the resident portal',
-      consequence: 'Automatic conversion to month-to-month rate ($2,450/mo) plus a $125 monthly holdover administrative fee if not returned by October 25, 2026.',
+      consequence: 'Automatic conversion to month-to-month rate (₹2,450/mo) plus a ₹125 monthly holdover administrative fee if not returned by October 25, 2026.',
       consequenceProvenance: 'From document',
       consequenceType: 'missed_eligibility',
-      sourceExcerpt: 'Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of $2,450.00/month plus a $125.00 monthly holdover administrative fee.',
+      sourceExcerpt: 'Failure to submit your signed renewal or 60-day notice to vacate by October 25, 2026 will cause your tenancy to automatically convert into month-to-month tenancy at the penalty rate of ₹2,450.00/month plus a ₹125.00 monthly holdover administrative fee.',
     },
   },
   {
@@ -102,28 +102,28 @@ PATIENT STATEMENT & SUMMARY OF SERVICES
 Patient: Alex Vance | Date of Service: August 14, 2026
 Service Description: Comprehensive Metabolic Panel & Lipid Profile
 Insurance Billed: Blue Cross Blue Shield PPO
-Insurance Paid: $192.40 | Contracted Adjustment: $118.00
+Insurance Paid: ₹192.40 | Contracted Adjustment: ₹118.00
 
-PATIENT BALANCE DUE: $84.20
+PATIENT BALANCE DUE: ₹84.20
 Statement Date: September 20, 2026
 Payment Due Date: October 20, 2026
 
 REQUIRED ACTION:
-Submit balance payment of $84.20 via mychart.metrohealth.org/pay or call automated phone payment system at 1-800-555-0194 before October 20, 2026.
+Submit balance payment of ₹84.20 via mychart.metrohealth.org/pay or call automated phone payment system at 1-800-555-0194 before October 20, 2026.
 
 CONSEQUENCE CITED:
-Accounts with outstanding balances beyond 60 days of statement date will be charged a $15 late administrative fee and may be referred to an external debt collection agency, potentially impacting credit standing. No interest is charged during initial 30 days.`,
+Accounts with outstanding balances beyond 60 days of statement date will be charged a ₹15 late administrative fee and may be referred to an external debt collection agency, potentially impacting credit standing. No interest is charged during initial 30 days.`,
     expectedProposal: {
       title: 'Quest Lab Diagnostic Balance',
       category: 'Health & Medical',
       payee: 'Metropolitan Healthcare Partners / Quest',
-      amount: '$84.20',
+      amount: '₹84.20',
       dueDate: '2026-10-20',
-      requiredAction: 'Pay balance of $84.20 online via mychart or automated phone system',
-      consequence: '$15 late administrative fee and potential referral to debt collection agency after 60 days.',
+      requiredAction: 'Pay balance of ₹84.20 online via mychart or automated phone system',
+      consequence: '₹15 late administrative fee and potential referral to debt collection agency after 60 days.',
       consequenceProvenance: 'From document',
       consequenceType: 'required_followup',
-      sourceExcerpt: 'Accounts with outstanding balances beyond 60 days of statement date will be charged a $15 late administrative fee and may be referred to an external debt collection agency, potentially impacting credit standing.',
+      sourceExcerpt: 'Accounts with outstanding balances beyond 60 days of statement date will be charged a ₹15 late administrative fee and may be referred to an external debt collection agency, potentially impacting credit standing.',
     },
   },
   {
@@ -184,7 +184,7 @@ SUBSCRIPTION RENEWAL INVOICE
 Plan: Cloud Pro Infrastructure & Team Workspace (Annual Tier)
 Service Period: October 15, 2026 - October 14, 2027
 
-Annual Subscription Total: $240.00
+Annual Subscription Total: ₹240.00
 Stored Payment Method: Visa ending in 4018 (Expires 10/26)
 Renewal Charge Date: October 15, 2026
 
@@ -197,7 +197,7 @@ If recurring payment authorization fails on October 15, 2026, workspace will ent
       title: 'Cloud Infrastructure Annual Subscription',
       category: 'Subscriptions & Services',
       payee: 'Cloud Engine Systems LLC',
-      amount: '$240.00',
+      amount: '₹240.00',
       dueDate: '2026-10-15',
       requiredAction: 'Review team seats and verify credit card in Billing Settings before Oct 15',
       consequence: 'After 3-day grace period (Oct 18), team access downgraded to Free tier with capped production builds and throttled API rates.',
@@ -278,15 +278,10 @@ export function extractProposalFromText(rawText: string, fileName?: string): Obl
   }
 
   // 4. Amount Heuristics
-  let amount = '$0.00 (No payment cited)';
-  const amountMatches = trimmed.match(/(?:[$€£₹]|USD\s?)\s*([0-9]{1,4}(?:,[0-9]{3})*(?:\.[0-9]{2})?)/i) ||
-                        trimmed.match(/(?:total|balance|amount due|payment|charges)[\s:]*([$€£₹]?\s*[0-9]+(?:\.[0-9]{2})?)/i);
-  if (amountMatches) {
-    const matchedStr = amountMatches[0].trim();
-    amount = matchedStr.startsWith('$') || matchedStr.startsWith('€') || matchedStr.startsWith('₹') || matchedStr.startsWith('£')
-      ? matchedStr
-      : `$${amountMatches[1]}`;
-  }
+  let amount = '₹0.00 (No payment cited)';
+  const amountMatches = trimmed.match(/(?:₹|INR\s*|Rs\.?\s*)\s*([0-9]+(?:,[0-9]{2,3})*(?:\.[0-9]{1,2})?)/i);
+  if (amountMatches) amount = '₹' + amountMatches[1];
+  else if (/(?:\$|USD|EUR|GBP|€|£)/i.test(trimmed)) amount = 'INR amount needed';
 
   // 5. Due Date Heuristics
   // Default fallback: 14 days from today
